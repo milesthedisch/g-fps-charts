@@ -30,7 +30,8 @@ apiRouter.route('/add')
 apiRouter.route('/graph')
     .get(function(req, res){
         var today = new Date().getDate();
-        Test.find({})
+        var results = Test.find({});
+        res.send(results);
     });
 
 apiRouter.route('/index')
