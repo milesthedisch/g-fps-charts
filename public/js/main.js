@@ -4,7 +4,7 @@
     };
     domReady(function(){
       var httpRequest;
-      document.getElementById("getGraphs").onclick = function() { makeRequest('/api/graphs'); };
+      document.querySelector(".getGraphs").onclick = function() { makeRequest('/api/graphs'); };
 
       function makeRequest(url) {
         httpRequest = new XMLHttpRequest();
@@ -21,7 +21,7 @@
       function alertContents() {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
           if (httpRequest.status === 200) {
-            console.log(httpRequest.responseText);
+            console.log(httpRequest);
           } else {
             alert('There was a problem with the request.');
           }
